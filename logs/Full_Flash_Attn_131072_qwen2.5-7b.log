@@ -1,0 +1,60 @@
+/home/usrname/miniconda/envs/sqattn/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:718: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+W1030 09:51:45.040000 3677507 site-packages/torch/utils/cpp_extension.py:2430] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1030 09:51:45.040000 3677507 site-packages/torch/utils/cpp_extension.py:2430] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+2025-10-30 09:51:45,109 - INFO - flashinfer.jit: Prebuilt kernels not found, using JIT backend
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+/home/usrname/miniconda/envs/sqattn/lib/python3.10/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+/home/usrname/miniconda/envs/sqattn/lib/python3.10/site-packages/jieba/_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Namespace(data_dir=PosixPath('ruler_eval_result/Qwen/Qwen2.5-7B-Instruct/synthetic/131072/Full_Flash_Attn/data'), save_dir=PosixPath('ruler_eval_result/Qwen/Qwen2.5-7B-Instruct/synthetic/131072/Full_Flash_Attn/pred'), benchmark='synthetic', task='vt', subset='validation', chunk_idx=0, chunk_amount=1, server_type='hf', server_host='127.0.0.1', server_port='5000', ssh_server=None, ssh_key_path=None, model_name='Qwen/Qwen2.5-7B-Instruct', attn_type='Full_Flash_Attn', max_len=131072, batch_size=1, device='cuda:0', dtype='bf16', temperature=1.0, top_k=32, top_p=1.0, random_seed=0, sliding_window_size=None, threads=4, synthetic_len=131072, calib_dataset='longbench', nsamples=128, seqlen=2048, eval_ppl=True, eval_gsm8k=False, multigpu=False, tasks=None, num_fewshot=0, limit=-1, dynamic_shape=False, quant=True, qk_qtype='int', v_qtype='int', bit8_thres=0.75, bit4_thres=0.8, sample_output_file='gsm8k_res.jsonl', use_relative_distance=True, max_new_tokens=128, budget_ratio=0.018, estimate_ratio=0.232)
+Predict vt 
+from ruler_eval_result/Qwen/Qwen2.5-7B-Instruct/synthetic/131072/Full_Flash_Attn/data/vt/validation.jsonl
+to ruler_eval_result/Qwen/Qwen2.5-7B-Instruct/synthetic/131072/Full_Flash_Attn/pred/vt.jsonl
+[32m[2025-10-30 09:51:47,718] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,069] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,070] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,070] [    INFO][0m - Loading configuration file /home/data/usrname/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28/config.json[0m
+[32m[2025-10-30 09:51:48,070] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,070] [    INFO][0m - We are using <class 'paddleformers.transformers.qwen2.modeling.Qwen2ForCausalLM'> to load 'Qwen/Qwen2.5-7B-Instruct'.[0m
+[32m[2025-10-30 09:51:48,071] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,071] [    INFO][0m - Loading configuration file /home/data/usrname/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28/config.json[0m
+[32m[2025-10-30 09:51:48,071] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,071] [    INFO][0m - Loading weights file from cache at /home/data/usrname/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28/model.safetensors.index.json[0m
+[32m[2025-10-30 09:51:48,072] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,072] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,072] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:48,072] [    INFO][0m - Using download source: huggingface[0m
+W1030 09:51:48.332165 3677507 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 9.0, Driver API Version: 12.8, Runtime API Version: 12.9
+[32m[2025-10-30 09:51:48,360] [    INFO][0m - loss_subbatch_sequence_length: -1 , use_fused_head_and_loss_fn: False, use_filtered_label_loss: False[0m
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.66s/it]
+Loading checkpoint shards:  50%|█████     | 2/4 [00:03<00:03,  1.65s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:04<00:01,  1.64s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:06<00:00,  1.58s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:06<00:00,  1.60s/it]
+[32m[2025-10-30 09:51:54,770] [    INFO][0m - All model checkpoint weights were used when initializing Qwen2ForCausalLM.
+[0m
+[32m[2025-10-30 09:51:54,771] [    INFO][0m - All the weights of Qwen2ForCausalLM were initialized from the model checkpoint at Qwen/Qwen2.5-7B-Instruct.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use Qwen2ForCausalLM for predictions without further training.[0m
+[32m[2025-10-30 09:51:54,774] [    INFO][0m - Using download source: huggingface[0m
+[32m[2025-10-30 09:51:54,774] [    INFO][0m - Loading configuration file /home/data/usrname/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28/generation_config.json[0m
+
+  0%|          | 0/1 [00:00<?, ?it/s]context_len: 131072, n_clusters: 8192, nprobe: 147, n_segments: 16
+Allocate GPU buffers and CPU pin memory ...
+
+Start prefilling ...
+Prefill batch 0 of 1
+[Prefill before] allocated=21.55 GB, reserved=21.64 GB on gpu:0
+/home/usrname/miniconda/envs/sqattn/lib/python3.10/site-packages/paddle/utils/decorator_utils.py:420: Warning: 
+Non compatible API. Please refer to https://www.paddlepaddle.org.cn/documentation/docs/en/develop/guides/model_convert/convert_from_pytorch/api_difference/torch/torch.split.html first.
+  warnings.warn(
+
+Prefilling latency: 46.3227 s
+
+Start decoding ...
+Decoding latency: 54.57 ms/step, Throughput: 18.32 tokens/s
+                    
+Used time: 0.9 minutes
