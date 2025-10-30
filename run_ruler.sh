@@ -1,23 +1,4 @@
-#!/bin/bash
-# Copyright (c) 2024, NVIDIA CORPORATION.  All rights reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 # Root Directories
-export LD_PRELOAD=$CONDA_PREFIX/lib/libstdc++.so.6
-export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
-# export CUDA_LAUNCH_BLOCKING=1
-
 # Ensure Python can import from project root (for paddle_utils.py, etc.)
 export PYTHONPATH="./:$PYTHONPATH"
 
@@ -26,12 +7,13 @@ ROOT_DIR="./benchmark/ruler/ruler_eval_result" # the path that stores generated 
 
 NUM_SAMPLES=1
 MAX_SEQ_LENGTH=131072 # 1048576: 1024k, 131072: 128k
-ATTN_TYPE=Full_Flash_Attn
+ATTN_TYPE=SQAttn
 DEVICE=cuda:0
 TASK=vt
 DTYPE=bf16
 BIT8_THRES=0.75
 BIT4_THRES=0.80
+BENCHMARK=synthetic
 
 # Model and Tokenizer
 source benchmark/ruler/ruler_config_models.sh
@@ -48,7 +30,6 @@ fi
 
 # Benchmark and Tasks
 source benchmark/ruler/ruler_config_tasks.sh
-BENCHMARK=synthetic
 declare -n TASKS=$BENCHMARK
 if [ -z "${TASKS}" ]; then
     echo "Benchmark: ${BENCHMARK} is not supported"

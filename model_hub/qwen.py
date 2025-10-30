@@ -41,7 +41,7 @@ class QwenLayer(paddle.nn.Layer):
             setattr(self, "current_attention", attn_weights)
         if self.attention_type == "SQAttn" or self.attention_type == "SDPA":
             return sdpa_attention_forward(self, query_states, key_states, value_states, attention_mask=None, dropout=0.0, scaling=1.0, is_causal=True, tensor_layout="NHD")
-        elif self.attention_type == "Full_Flash_Attn":
+        elif self.attention_type == "FlashAttn":
             return paddle.nn.functional.flash_attention.flash_attention(query_states, key_states, value_states, causal=True)[0]
         else:
             raise ValueError(f"Unsupported attention type: {self.attention_type}")
@@ -49,7 +49,7 @@ class QwenLayer(paddle.nn.Layer):
     def decode_attention(self, query_states, key_states, value_states, layer_idx=None):
         if self.attention_type == "SDPA":
             return sdpa_attention_forward(self, query_states, key_states, value_states, attention_mask=None, dropout=0.0, scaling=1.0, is_causal=True, tensor_layout="NHD")
-        elif self.attention_type == "Full_Flash_Attn" or self.attention_type == "SQAttn":
+        elif self.attention_type == "FlashAttn" or self.attention_type == "SQAttn":
             return paddle.nn.functional.flash_attention.flash_attention(query_states, key_states, value_states, causal=True)[0]
         else:
             raise ValueError(f"Unsupported attention type: {self.attention_type}")

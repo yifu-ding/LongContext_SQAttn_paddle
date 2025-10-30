@@ -27,7 +27,7 @@ def process_model(model, method, window_sizes=None, args=None):
                 model.layers[i] = layer
     elif method == "SDPA":
         print("use sdpa")
-    elif method == "Full_Flash_Attn":
+    elif method == "FlashAttn":
         print("use full flash attn")
     else:
         raise ValueError(f"Unsupported attention type: {method}")

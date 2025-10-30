@@ -271,8 +271,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--attn_type",
         type=str,
-        default="Full_Flash_Attn",
-        choices=["Full_Flash_Attn", "SQAttn", "SDPA"],
+        default="FlashAttn",
+        choices=["FlashAttn", "SQAttn", "SDPA"],
         help="Attention method",
     )
     parser.add_argument("--max_len", type=int, default=128000)
